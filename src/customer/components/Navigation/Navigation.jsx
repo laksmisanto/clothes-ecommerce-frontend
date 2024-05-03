@@ -39,7 +39,7 @@ const Navigation = () => {
                     Women
                   </ListItem>
                   {showHide && (
-                    <Grid className="transition-opacity duration-500 ease-linear grid-cols-6 absolute w-full top-10 left-0 p-10 bg-slate-50">
+                    <Grid className="transition-opacity duration-500 ease-linear grid-cols-6 absolute w-full top-10 left-0 p-10 bg-slate-50 z-[999]">
                       <div>
                         <h6 className="font-sans font-medium text-lg pb-3 cursor-default">
                           Clothing

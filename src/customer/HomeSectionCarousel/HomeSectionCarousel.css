@@ -1,0 +1,17 @@
+.home__section__carousel .slick-slide {
+  height: auto;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 6px #e0e0e0;
+  border: 1px solid #f3f3f3;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.home__section__carousel .slick-track {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
