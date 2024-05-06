@@ -1,0 +1,62 @@
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
+import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import { HomeSectionSliderData } from "../../data";
+import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
+import Container from "../../components/container/Container";
+
+const HomeSectionCarousel = () => {
+  const mobile = 1;
+  const tablet = 3;
+  const desktop = 5;
+
+  const responsive = {
+    0: { items: mobile },
+    720: { items: tablet },
+    1024: { items: desktop },
+  };
+  const items = HomeSectionSliderData.map((item, i) => (
+    <HomeSectionCard data={item} key={i} />
+  ));
+
+  return (
+    <>
+      <Container>
+        <div className="home__section__carousel w-full h-full relative">
+          <AliceCarousel
+            mouseTracking
+            disableDotsControls
+            animationType="fadeout"
+            animationDuration={800}
+            infinite={true}
+            items={items}
+            responsive={responsive}
+            renderPrevButton={() => {
+              return (
+                <button
+                  className=" absolute text-white px-2 py-4 rounded bg-teal-800 left-0 top-2/4 -translate-y-2/4"
+                  aria-label="prev"
+                >
+                  <KeyboardArrowLeftIcon />
+                </button>
+              );
+            }}
+            renderNextButton={() => {
+              return (
+                <button
+                  className=" absolute text-white px-2 py-4 rounded bg-teal-800 right-0 top-2/4 -translate-y-2/4"
+                  aria-label="next"
+                >
+                  <KeyboardArrowRightIcon />
+                </button>
+              );
+            }}
+          />
+        </div>
+      </Container>
+    </>
+  );
+};
+
+export default HomeSectionCarousel;

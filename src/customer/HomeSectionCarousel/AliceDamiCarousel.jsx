@@ -1,11 +1,13 @@
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import HomeSectionCard from "../HomeSectionCard/HomeSectionCard";
+import { HomeSectionSliderData } from "../../data";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import Container from "../../components/container/Container";
+import { useState } from "react";
 
-const HomeSectionCarousel = ({ data, categoryName }) => {
+const AliceDamiCarousel = () => {
   const mobile = 1;
   const tablet = 3;
   const desktop = 5;
@@ -15,34 +17,42 @@ const HomeSectionCarousel = ({ data, categoryName }) => {
     720: { items: tablet },
     1024: { items: desktop },
   };
-  const items = data.map((item, i) => (
-    <HomeSectionCard product={item} key={i} />
+  const items = HomeSectionSliderData.map((item, i) => (
+    <HomeSectionCard data={item} key={i} />
   ));
 
-  const handleNextSlide = ({ isDisabled }) => {
+  const renderNextButton = ({ isDisabled }) => {
     console.log("Next Btn", isDisabled);
     if (!isDisabled) {
       return (
-        <button
-          className=" absolute text-white px-2 py-4 rounded bg-teal-800 right-0 top-2/4 -translate-y-2/4"
-          aria-label="next"
-        >
-          <KeyboardArrowRightIcon />
-        </button>
+        <KeyboardArrowRightIcon
+          style={{
+            position: "absolute",
+            right: 0,
+            top: 0,
+            background: "orange",
+            color: "white",
+            padding: "14px 24px",
+          }}
+        />
       );
     }
   };
 
-  const handlePrevSlide = ({ isDisabled }) => {
+  const renderPrevButton = ({ isDisabled }) => {
     console.log("Prev Btn", isDisabled);
     if (!isDisabled) {
       return (
-        <button
-          className=" absolute text-white px-2 py-4 rounded bg-teal-800 left-0 top-2/4 -translate-y-2/4"
-          aria-label="prev"
-        >
-          <KeyboardArrowLeftIcon />
-        </button>
+        <KeyboardArrowLeftIcon
+          style={{
+            position: "absolute",
+            left: 0,
+            top: 0,
+            background: "orange",
+            color: "white",
+            padding: "14px 24px",
+          }}
+        />
       );
     }
   };
@@ -50,20 +60,17 @@ const HomeSectionCarousel = ({ data, categoryName }) => {
   return (
     <>
       <Container>
-        <div className="home__section__carousel w-full h-full relative block">
-          <h2 className="font-sans font-bold text-2xl text-gray-800 pb-8">
-            {categoryName}
-          </h2>
+        <div className="home__section__carousel w-full h-full relative">
           <AliceCarousel
             mouseTracking
             disableDotsControls
             animationType="fadeout"
-            animationDuration={500}
+            animationDuration={200}
             infinite={false}
             items={items}
             responsive={responsive}
-            renderPrevButton={handlePrevSlide}
-            renderNextButton={handleNextSlide}
+            renderPrevButton={renderPrevButton}
+            renderNextButton={renderNextButton}
           />
         </div>
       </Container>
@@ -71,4 +78,4 @@ const HomeSectionCarousel = ({ data, categoryName }) => {
   );
 };
 
-export default HomeSectionCarousel;
+export default AliceDamiCarousel;

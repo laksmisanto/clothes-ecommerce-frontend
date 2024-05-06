@@ -1,0 +1,10 @@
+.home_section_carousel .alice-carousel__dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home_section_carousel .__active {
+  background: rgb(255, 94, 0) !important;
+  box-shadow: 0px 0px 5px #000000, 0px 0px 10px #ffffff, 0px 0px 20px #000000;
+}

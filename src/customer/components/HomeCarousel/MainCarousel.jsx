@@ -1,31 +1,30 @@
-import Slider from "react-slick";
+import AliceCarousel from "react-alice-carousel";
 import { BannerSliderData } from "../../../data";
+import "./MainCarousel.css";
 
 const MainCarousel = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    autoplay: true,
-    duration: 500,
-  };
+  let items = BannerSliderData.map((item, i) => (
+    <img
+      key={i}
+      className="w-full h-[93vh] object-cover cursor-pointer"
+      src={item.image}
+      alt="banner image"
+      role="presentation"
+    />
+  ));
+
   return (
     <>
-      <div>
-        <Slider {...settings}>
-          {BannerSliderData.map((item, i) => (
-            <div className="h-[92vh]" key={i}>
-              <img
-                className="w-full h-full object-cover"
-                src={item.img}
-                alt="banner slide image"
-              />
-            </div>
-          ))}
-        </Slider>
+      <div className="home_section_carousel w-full h-full">
+        <AliceCarousel
+          autoPlay
+          infinite
+          autoPlayInterval={3000}
+          animationDuration={1000}
+          animationType="fadeout"
+          items={items}
+          disableButtonsControls
+        />
       </div>
     </>
   );

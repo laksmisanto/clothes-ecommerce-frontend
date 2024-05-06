@@ -91,16 +91,16 @@ export const BrandsMenuData = [
 
 export const BannerSliderData = [
   {
-    img: banner1,
+    image: banner1,
   },
   {
-    img: banner2,
+    image: banner2,
   },
   {
-    img: banner3,
+    image: banner3,
   },
   {
-    img: banner4,
+    image: banner4,
   },
 ];
 
@@ -112,7 +112,7 @@ export const HomeSectionSliderData = [
   },
   {
     image: cyanLite,
-    name: "Cyan lite slick sari",
+    name: "Cyan lite sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
   {
@@ -127,12 +127,12 @@ export const HomeSectionSliderData = [
   },
   {
     image: orangeLite,
-    name: "orange lite slick sari",
+    name: "orange lite sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
   {
     image: orangeDark,
-    name: "orange dark cotton slick sari",
+    name: "orange dark sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
   {
@@ -142,17 +142,17 @@ export const HomeSectionSliderData = [
   },
   {
     image: pink,
-    name: "pink cotton slick sari",
+    name: "pink slick sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
   {
     image: purple,
-    name: "purple fiver slick sari",
+    name: "purple slick sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
   {
     image: yellowLite,
-    name: "yellow lite organic slick sari",
+    name: "yellow lite sari",
     tag: "It is a comfortable saree, which is made of fine cotton fabric.",
   },
 ];
